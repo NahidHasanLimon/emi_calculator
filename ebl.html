@@ -1,0 +1,1399 @@
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Eastern Bank Ltd. | EMI Calculator </title>
+<meta name="description" content="#" />
+<meta name="keywords" content="#" />
+<meta name="author" content="#" />
+<!-- Favicon and Touch Icons -->
+<link href="images/favicon.png" rel="shortcut icon" type="image/png">
+<link href="images/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+<link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+<link href="images/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+
+<!-- Stylesheet -->
+<link href="https://www.ebl.com.bd/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="https://www.ebl.com.bd/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+<link href="https://www.ebl.com.bd/css/animate.css" rel="stylesheet" type="text/css">
+<link href="https://www.ebl.com.bd/css/css-plugin-collections.css" rel="stylesheet"/>
+<!-- CSS | menuzord megamenu skins -->
+<link id="menuzord-menu-skins" href="https://www.ebl.com.bd/css/menuzord-skins/menuzord-boxed.css" rel="stylesheet"/>
+<!-- CSS | Main style file -->
+<link href="https://www.ebl.com.bd/css/style-main.css" rel="stylesheet" type="text/css">
+<!-- CSS | Preloader Styles -->
+<link href="https://www.ebl.com.bd/css/preloader.css" rel="stylesheet" type="text/css">
+<!-- CSS | Custom Margin Padding Collection -->
+<link href="https://www.ebl.com.bd/css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
+<!-- CSS | Responsive media queries -->
+
+<!-- Revolution Slider 5.x CSS settings -->
+<link  href="https://www.ebl.com.bd/js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css"/>
+<link  href="https://www.ebl.com.bd/js/revolution-slider/css/layers.css" rel="stylesheet" type="text/css"/>
+<link  href="https://www.ebl.com.bd/js/revolution-slider/css/navigation.css" rel="stylesheet" type="text/css"/>
+
+<!-- CSS | Theme Color -->
+<link href="https://www.ebl.com.bd/css/colors/theme-skin-color-set1.css" rel="stylesheet" type="text/css">
+<link href="https://www.ebl.com.bd/css/custom.css" rel="stylesheet" type="text/css">
+<link href="https://www.ebl.com.bd/css/responsive.css" rel="stylesheet" type="text/css">
+<link href="https://www.ebl.com.bd/js/emical/css/simple-slider.css" rel="stylesheet" type="text/css">
+<link href="https://www.ebl.com.bd/js/emical/css/simple-slider-volume.css" rel="stylesheet" type="text/css"> 
+
+<!-- external javascripts -->
+<script src="https://www.ebl.com.bd/js/jquery-2.2.4.min.js"></script>
+<script src="https://www.ebl.com.bd/js/jquery-ui.min.js"></script>
+<script src="https://www.ebl.com.bd/js/bootstrap.min.js"></script>
+<!-- JS | jquery plugin collection for this theme -->
+<script src="https://www.ebl.com.bd/js/jquery-plugin-collection.js"></script>
+<link rel="stylesheet" href="https://www.ebl.com.bd/js/emi/css/jquery-ui.css">
+<script src="https://www.ebl.com.bd/js/emi/js/jquery-ui.js"></script>
+<style>
+canvas{ padding: 15px 0px 0px 15px;}
+
+input.output {  font-size: 14px; padding-top: 1px; margin-left: 5px; vertical-align: top;}
+
+.slidyText{
+float:left;
+//position: relative;
+}
+.slidyText input{
+text-align: center;
+}
+.toggle-open {
+background: url('https://www.ebl.com.bd/js/emical/images/toggle-open.png') no-repeat scroll 10% 50% transparent;
+}
+.toggle {
+background: url('https://www.ebl.com.bd/js/emical/images/toggle-closed.png') no-repeat scroll 10% 50% transparent;
+cursor: pointer;
+}
+
+.currency{
+float:left; 
+height:20px;
+}
+.title{
+float:left; 
+padding-top:5px; 
+height:20px;
+text-align: left;
+}
+
+#amortization-table tr td{
+text-align:center;
+}
+#amortization-table thead tr th{
+text-align:center;
+}
+.btn_style{
+min-width: 200px;
+height: 30px;
+border: 1px #8ab936;
+background-color: #8ab936;
+color: #03c9ab;
+font-weight: bold;
+font-family: arial;
+font-size: 13px; 
+}
+
+#hyperlnk{	}
+#hyperlnk a{text-decoration:none;}
+
+@media screen and (min-width:320px) and  (max-width:980px){
+#responsivetable td{
+display:block;
+}
+}
+
+.piaadiv{
+float: left;
+border: solid 1px #CCCCCC;
+width: 100%;
+}
+#amortization-chart-body h2{ margin-bottom: 20px; margin-top: 20px; border-bottom:2px solid #333; color:#333;}
+</style>
+</head>
+<body class="fullwidth-page">
+    <div class="body-overlay"></div>
+    <div id="side-panel" class="dark layer-overlay overlay-white-8" data-bg-img="https://www.ebl.com.bd/images/ebl-buliding.png">
+
+<div class="side-panel-wrap">
+
+<div id="side-panel-trigger-close" class="side-panel-trigger"><a href="#"><i class="fa fa-close font-30"></i></a></div>
+
+<div class="side-panel-widget">
+
+
+
+<div class="widget">
+
+<nav>
+
+<ul class="nav nav-list">
+<li class="text-white"><a href="tel:16230"><img src="https://www.ebl.com.bd/images/call_center.png" alt=""  class="img-responsive" width="140"></a> </li>
+<li class="text-white"><a href="https://www.ebl.com.bd/regulatory/complaintcell" class="text-black"><i class="fa fa-square-o"></i> Complaint Cell</a></li>
+<li class="text-white"><a href="https://www.ebl.com.bd/charges#irate" class="text-black"><i class="fa fa-square-o"></i>  Interest Rates </a></li>
+<li class="text-white"><a href="https://www.ebl.com.bd/charges#soc" class="text-black"><i class="fa fa-square-o"></i> Schedule of Charges </a></li>
+<li class="text-white"><a href="https://www.ebl.com.bd/forexrate" class="text-black"><i class="fa fa-square-o"></i> Foreign Exchange Rate</a></li>
+<li class="text-white"><a href="https://www.ebl.com.bd/downloads/" class="text-black"><i class="fa fa-square-o"></i> Forms & Downloads</a></li>
+</ul>
+
+</nav>
+
+</div>
+
+
+<hr />
+<div class="widget">
+<ul>
+<li class="font-14 mb-5 text-black" > <strong>Head Office</strong><br />
+Eastern Bank Ltd.
+100 Gulshan Avenue,
+Dhaka-1212,
+Bangladesh </li>
+<li class="font-14 mb-5"><i class="fa fa-phone text-theme-colored"></i> <a href="tel:8809666777325" class="text-black"> + 88 09666777325  </a> </li>
+
+<li class="font-14 mb-5"><i class="fa fa-envelope-o text-theme-colored"></i> <a href="mailto:info@ebl-bd.com" class="text-black">info@ebl-bd.com</a> </li>
+
+<li class="font-14 mb-5"><i class="fa fa-envelope-o text-theme-colored"></i> <a href="#" class="text-black"><strong>Swift Code:</strong> 	EBLDBDDH </a> </li>
+
+
+
+
+
+</ul>
+
+</div>
+
+<div class="widget">
+
+<h5 class="widget-title">Opening Hours</h5>
+
+<div class="opening-hours text-left">
+
+<ul class="list-unstyled">
+
+<li class="clearfix line-height-1"> 
+
+<div class="text-black"> Sunday - Thursday </div>
+
+<br />
+
+<div  class="text-black"> 10.00 AM - 4.00 PM </div>
+
+</li>
+
+
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+
+<p>Copyright &copy;2018 Eastern Bank Ltd.</p>
+
+</div>
+
+</div>
+
+</div>
+
+    <div id="wrapper" class="clearfix">
+      <!-- preloader -->
+      <div id="preloader">
+        <div id="spinner">
+            <div class="preloader-dot-loading">
+                <div class="cssload-loading"><i></i><i></i><i></i><i></i></div>
+            </div>
+        </div>
+        <div id="disable-preloader" class="btn btn-default btn-sm">Disable Preloader</div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="header modern-header modern-header-white navbar-scrolltofixed">
+        <div class="header-nav">
+<div class="header-nav-wrapper">
+<div class="container">
+<div id="search" class="search-field">
+<button class="close" type="button">&times;</button>
+<form >
+<input type="search" placeholder="Search on Site..." value=""  id="global_search" >
+<span class="searc_button"><i class="icon-icons185"></i></span>
+<input type="hidden"  name="csrf_eblbdtoken_name" value="8fd0e317d932bddc235e6ec390df171b" />	
+<button class="btn btn-primary" type="submit">Search</button>
+<div id="search_result_field">
+<div class="global_results hidden" >
+        
+     </div>
+     </div>
+</form>
+
+</div>
+<nav id="menuzord-right" class="menuzord green mplpr15">
+<a class="menuzord-brand pull-left flip mb-5" href="https://www.ebl.com.bd/"><img src="https://www.ebl.com.bd/images/eastern-bank-ltd.gif" alt=""> 
+<!-- <div id="displytimemsg" ></div>-->
+</a>
+
+<ul class="menuzord-menu">
+<!-- <li class=""><a href="#home"><i class="fa fa-home"></i></a>
+</li>-->
+<li class="search quickbox hidden-md hidden-lg">
+<a href="https://www.ebl.com.bd/locator/" class=""><i class="fa fa-map-marker fa-icon"></i> </a>| <a href="#search" class="ebl-desktop-search-show-btn"><i class="fa fa-search fa-icon fa-icon "></i></a> | 
+<a href="#" class="side-panel-trigger"><i class="fa fa-question-circle fa-icon "></i></a> | <a href="https://ib.ebl-bd.com/B001/ENULogin.jsp" class="quickborder-left dropdown-toggle"><img src="https://www.ebl.com.bd/images/user-loging-white.png" alt="Internet-banking">  </a> | <a href="https://skybanking.ebl-bd.com/"  class="quickborder-left2 " ><img src="https://www.ebl.com.bd/images/ebl-skybnaking-apps.png" alt="ebl-skybnaking"></a></li>
+<li><a href="javascript:void(0)">About EBL</a>
+<ul class="dropdown">
+<li><a href="https://www.ebl.com.bd/profile">EBL Profile</a></li>
+<li><a href="https://www.ebl.com.bd/mission">Vision, Mission, Values</a></li>
+<li><a href="https://www.ebl.com.bd/bod">Board of Directors</a></li>
+<li><a href="https://www.ebl.com.bd/management">EBL Management</a></li>
+<!--<li><a href="https://www.ebl.com.bd/investorrelations">Investors' Relations Department</a></li>
+--><li><a href="https://www.ebl.com.bd/milestones">Milestones</a></li>
+<li><a href="https://www.ebl.com.bd/achievements">Achievements</a></li>
+<!--<li><a href="https://www.ebl.com.bd/responsibility">Corporate Social Responsibility </a></li>
+<li><a href="https://www.ebl.com.bd/branches">EBL Office, Branches & Centers</a></li>-->
+<li><a href="https://www.ebl.com.bd/download/Directors-Report-2019.pdf" target="_blank">Directors' Report</a></li>
+<li><a href="https://www.ebl.com.bd/download/Corporate-Governance-Report.pdf" target="_blank">Corporate Governance Guidelines</a></li>
+
+</ul>
+</li>
+<li><a href="javascript:void(0)">Retail & SME</a>
+<ul class="dropdown">
+<li><a href="#">Retail Banking<span class="indicator"><i class="fa fa-angle-right"></i></span></a>
+<ul class="dropdown" style="display: none;">
+<li><a href="#">Retail Loan<span class="indicator"><i class="fa fa-angle-right"></i></span></a>
+<ul class="dropdown" style="display: none;">
+<li><a href="https://www.ebl.com.bd/retail/retail-loan">Personal Loan</a></li>
+<li><a href="https://www.ebl.com.bd/retail/retail-loan">Mortgage Loan</a></li>
+<li><a href="https://www.ebl.com.bd/retail/retail-loan">Auto Loan</a></li>
+<li><a href="https://www.ebl.com.bd/retail/retail-loan">Two Wheeler Loan</a></li>
+<li><a href="https://www.ebl.com.bd/retail/retail-loan">Secured loan (Cash Covered)</a></li>
+<li><a href="https://www.ebl.com.bd/retail/retail-loan">Edu Finance</a></li>
+</ul>
+</li>
+<li><a href="#">Retail Deposit<span class="indicator"><i class="fa fa-angle-right"></i></span></a>
+<ul class="dropdown" style="display: none;">
+<li><a href="https://www.ebl.com.bd/retail/retail-deposit">Current Deposits</a></li>
+<li><a href="https://www.ebl.com.bd/retail/retail-deposit">RFCD Account</a></li>
+<li><a href="https://www.ebl.com.bd/retail/retail-deposit">Savings Deposits</a></li>
+<li><a href="https://www.ebl.com.bd/retail/retail-deposit">DPS</a></li>
+<li><a href="https://www.ebl.com.bd/retail/retail-deposit">Fixed Deposits</a></li>
+<li><a href="https://www.ebl.com.bd/retail/retail-deposit">EBL Matribhumi-NRB Banking</a></li>
+<li><a href="https://www.ebl.com.bd/retail/retail-deposit">Expat Accounts</a></li>
+
+</ul>
+</li>
+<li><a href="https://www.ebl.com.bd/retail/EBL-Cards">EBL Cards</a></li>
+
+<li><a href="#">Digital Channels <span class="indicator"><i class="fa fa-angle-right"></i></span></a>
+<ul class="dropdown" >
+<li><a href="https://www.ebl.com.bd/retail-digital/ebl-internet-banking" >EBL Internet Banking</a></li>
+<li><a href="https://www.ebl.com.bd/retail-digital/ebl-skybanking" >EBL SKYBANKING</a></li>
+<li><a href="https://www.ebl.com.bd/retail-digital/ebl-missed-call-alert-service" >EBL Missed Call Alert Service</a></li>
+<li><a href="https://www.ebl.com.bd/retail-digital/ebl-dia" >EBL DIA</a></li>
+</ul>
+</li>
+<li><a href="#">E-Commerce<span class="indicator"><i class="fa fa-angle-right"></i></span></a>
+<ul class="dropdown" style="display: none;">
+<li><a href="https://www.ebl.com.bd/retail-ecommerce/ebl-skypay" >EBL SKYPAY</a></li>
+</ul>
+
+</li>
+
+
+<li><a  href="https://www.ebl.com.bd/retail/ebl-insta-account"   >EBL Insta Account</a></li>
+<li><a  href="https://www.ebl.com.bd/priority/"  >EBL Priority Banking</a></li>
+<li><a  href="https://www.ebl.com.bd/retail/Women-Banking"   >EBL Women Banking</a></li>
+<li><a  href="https://www.ebl.com.bd/agentbanking"  >EBL Agent Banking</a></li>
+<li><a  href="https://www.ebl.com.bd/retail/EBL-Payroll-Banking"   >EBL Payroll Banking</a></li>
+<li><a  href="https://www.ebl.com.bd/retail/EBL-Student-Banking"   >EBL Student Banking</a></li>
+<li><a  href="https://www.ebl.com.bd/retail/ebl-retail-propositions"   >EBL Retail Propositions</a></li>
+<li><a  href="https://www.ebl.com.bd/retail/ebl-supply-chain-financing"   >EBL Supply Chain Financing</a></li>
+
+</ul>
+</li>
+
+<li><a href="#">SME Banking<span class="indicator"><i class="fa fa-angle-right"></i></span></a>
+<ul class="dropdown" style="display: none;">
+<li><a href="https://www.ebl.com.bd/sme/sme-loans">SME Loans</a></li>
+<li><a href="https://www.ebl.com.bd/sme/sme-deposits">SME Deposits</a></li>
+
+ 
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="javascript:void(0)">Corporate</a>
+<ul class="dropdown">
+<li><a href="https://www.ebl.com.bd/corporate/banking/Corporate-Banking-Division">Corporate Banking Division</a></li>
+<li><a href="https://www.ebl.com.bd/corporate/banking/Business-Relationship-Units">Business Relationship Units</a></li>
+<li><a href="https://www.ebl.com.bd/corporate/banking/Cash-Management-Unit">Cash Management Unit</a></li>
+<li><a href="https://www.ebl.com.bd/corporate/banking/structured-finance-unit">Structured Finance Unit</a></li>
+<li><a href="https://www.ebl.com.bd/corporate/banking/International-Business-and-Offshore-Banking-Unit">International Business and Offshore Banking Unit</a></li>
+<li><a href="https://www.ebl.com.bd/corporate/banking/ebl-finance-hk-ltd">EBL Finance (HK) Ltd.</a></li>
+</ul>
+</li>
+
+<li><a href="https://www.ebl.com.bd/about-treasury">Treasury</a>
+
+<ul class="dropdown">
+<li><a href="https://www.ebl.com.bd/treasury/asset-liability-management">Asset Liability Management</a></li>
+<li><a href="https://www.ebl.com.bd/treasury/money-market">Money Market</a></li>
+<li><a href="https://www.ebl.com.bd/treasury/foreign-exchange">Foreign Exchange</a></li>
+<li><a href="https://www.ebl.com.bd/treasury/non-resident-business-nrb">Non Resident Business (NRB) </a></li>
+<li><a href="https://www.ebl.com.bd/treasury/fixed-income-investment">Fixed Income Investment</a></li>
+<li><a href="https://www.ebl.com.bd/treasury/corporate-sales">Corporate Sales</a></li>
+<li><a href="https://www.ebl.com.bd/treasury/derivative-Instrument">Derivative Instrument</a></li>
+<li><a href="https://www.ebl.com.bd/treasury/fund-transfer-pricing">Fund Transfer Pricing</a></li>
+<li><a href="https://www.ebl.com.bd/treasury/government-securities-investment-window">Government Securities Investment Window</a></li>
+</ul>
+
+</li>
+
+<li><a href="https://www.ebl.com.bd/investor-relations" >Investor Relations</a>
+<ul class="dropdown">
+<li><a href="https://www.ebl.com.bd/details-of-shareholding">Details of Shareholding</a></li>
+<li><a href="https://www.ebl.com.bd/financial-reports">Financial Highlights</a></li>
+<li><a href="https://www.ebl.com.bd/annual-reports">Annual Reports</a></li>
+<li><a href="https://www.ebl.com.bd/annual-quarterly">Quarterly/Half-yearly Reports</a></li>
+<li><a href="https://www.ebl.com.bd/credit-rating">Credit Rating</a></li>
+<li><a href="https://www.ebl.com.bd/disclosures">Disclosure</a></li>
+
+
+</ul>
+</li>
+<li><a href="http://ebl.bdjobs.com/">Career</a></li>
+
+</ul>
+</nav>
+
+</div>
+
+</div>
+<div class="ebl-section-right hidden-xs">
+<div class="ebl-quick-access">
+<ul>
+<li  class="help"><a href="#" class="ebl-desktop-search-show-btn"><i class="fa fa-search fa-icon fa-icon "></i><span class="ebl-label">Search</span></a></li>			
+</ul>
+</div>
+<div class="ebllogin merginright30 ">
+<ul class="nav navbar-nav list-bordered language-switcher">
+<li class="dropdown">
+<a href="https://ib.ebl-bd.com/B001/ENULogin.jsp" class="quickborder-left dropdown-toggle"><img src="https://www.ebl.com.bd/images/user-loging.png" alt="user-loging"> IB login </a>
+</li>
+</ul>
+<div class="" style="position:absolute;right:-41px; top:20px;">
+<a href="https://skybanking.ebl-bd.com/"  class="quickborder-left2 " ><img src="https://www.ebl.com.bd/images/ebl-skybnaking-apps.png" alt="ebl-skybnaking"></a>
+</div>
+</div>
+</div>
+</div>    
+    </header>
+    <!-- Start main-content -->
+    <div class="main-content">
+    
+
+
+<!-- Section: Services -->
+<section class="bg-white" id="Eligibility">
+
+    <div class="container">
+    <div class="row">
+                    <div class="col-md-12">
+                    <h2 class="text-center separator-title-color">Loan Calculator</h2>
+                    
+                    </div>
+                    </div>
+        <div class="row">
+        
+            <div class="col-md-8 col-md-offset-2">
+                <div id="calci_ui">
+                            
+                            <br>
+                            <div class="align-center">
+                            <h4> Loan amount required </h4>
+                            <div class="row">
+                            <div class="col-md-8">
+                            <div class="slidy">
+                            <input id="slider1" data-slider="true" data-slider-step="50000" data-slider-range="50000,20000000" value="1,00,000" data-slider-highlight="true" style="display: none;" type="text">
+                            </div>
+                            </div>
+                            <div class="col-md-4">
+                            <div class="slidyText">
+                            <input onMouseDown="this.value=numberWithoutCommas(this.value.toString());" title="Please select required Loan Amount.Min 50,000 &amp; Max 2,00,00,00,000." class="output" size="15" onBlur="this.value=numberWithCommas(this.value);" onKeyPress="return numeralsOnly(event);" maxlength="10" value="1,000,000" name="v1" id="v1" onChange="v1inputChange()" type="text"> 
+                            <img style="" src="https://www.ebl.com.bd/js/emical/images/currency_sign_rupee_grey.png" width="20px" height="20px">
+                            </div>
+                            </div>
+                            </div>
+                          
+                            </div>
+                            <br>
+                            
+                            <div class="align-center">
+                            <h4>Repayment term required (Months) :</h4>
+                            <div class="row">
+                            <div class="col-md-8">
+                            <div class="slidy">
+                            <input id="slider2" data-slider="true" data-slider-step="1" data-slider-range="12,300" value="30" data-slider-highlight="true" style="display: none;" type="text">
+                            </div>
+                            </div>
+                            <div class="col-md-4">
+                            <div class="slidyText">
+                            <input title="Please select repayment term in months.Min 12 months(1 year) &amp; Max 300 months(25 year)." value="60" name="v2" size="15" onKeyPress="return numeralsOnly(event);" maxlength="3" id="v2" onChange="v2inputChange()" type="text"> <b>Months</b>
+                            </div>
+                            
+                            </div>
+                            </div>
+                            <br>
+                            <div class="align-center">
+                            <h4>Interest Rate :</h4>
+                           <div class="row">
+                            <div class="col-md-8">
+                            <div class="slidy">
+                            <input id="slider3" data-slider-step="0" data-slider="true" data-slider-range="1,100" value="10" data-slider-highlight="true" style="display: none;" type="text">
+                            </div>
+                            </div>
+                            <div class="col-md-4">
+                            <div class="slidyText">
+                            <input title="Please select interest rate." value="10" size="15" name="v3" onKeyPress="return numeralsAndDecimalOnly(event);" maxlength="5" id="v3" onChange="v3inputChange()" type="text"> <b>%</b>
+                            
+                            </div>
+                            </div>
+                            </div>
+                            <br>
+                            </div><br><br>
+                            
+                            </div>
+                            
+                            
+                            
+                            <div class="row">
+                            <div class="col-md-6">
+                            <div style="display: block;">
+                            <!-- Table -->
+                            
+                            <div id="calci_ui2">
+                            <table style=" width:100%;height: 215px;" cellspacing="0" cellpadding="10">
+                            <tbody><tr>
+                            <td style="border: solid 1px #CCCCCC;" align="center"> Monthly Payment (EMI)<br>
+                            <div id="emi" align="center"></div></td>      
+                            </tr>
+                            <tr>
+                            <td style="border: solid 1px #CCCCCC;" align="center">Total Interest Payable<br>
+                            <div id="tip"></div></td>
+                            </tr>
+                            <tr>
+                            <td style="border: solid 1px #CCCCCC;" align="center">Total Payment<br>(Principal + Interest)<br>
+                            <div id="tp"> </div></td>
+                            </tr>
+                            </tbody></table>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="col-md-6">
+                            <!-- Table -->
+                            <div class="piaadiv">
+                            <!-- PIE CHART -->
+                            <canvas id="canvas"  ></canvas>
+                            <!-- PIE CHART -->
+                            
+                            <!-- PIE CHART NOTATIONS -->
+                            <div class="roundaadesc">
+                            <table>
+                            <tbody><tr>
+                            <td><div style="width:15px; height: 15px; background-color:#03c9ab;margin: 2px 2px 2px 2px; "></div></td>
+                            <td><b> Principal Loan Amount </b></td>
+                            </tr><tr>
+                            <td><div style="width:15px; height: 15px; background-color:#8ab936; margin: 2px 2px 2px 2px; "></div></td>
+                            <td><b> Total Interest </b></td>
+                            </tr>
+                            </tbody></table>
+                            </div>
+                            </div>   
+                            
+                            </div>               
+                            
+                          
+                            </div> 
+                            <div class="row">
+                             <div class="col-lg-12">
+                               <div id="amortization-chart">
+                            <!-- <input type="button" class="btn_style" value="Generate Amortization Chart" onclick="amortizationChart()" />-->
+                            <div id="amortization-chart-body">
+                          
+                           
+                            </div>
+                            </div>
+                             </div>
+                             </div>
+                             
+                           
+                            <!--Calculator End-->
+                            
+                            
+                            </div>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+</section>
+
+<!-- Section:Service-->
+
+
+<section id="contactus" class="contactusbg">
+ <div class="cta-footer-wrapper colored-container">
+    <div class="pt-40 pb-40">
+      <h2 class="text-center separator-title-color">
+       Support
+   </h2>
+ 
+<p class="text-theme-colored text-center text-bold font24">We are here to help you. Find the answers and while you are at it, tell us how we could do better.</p>
+</div>
+
+<div class="container">
+
+   <div class="row cta-footer-row p-t-40 p-b-40">
+
+      <div class="col-md-4 col-sm-12 text-center cta-footer-col">
+         <div class="cta-footer-content">
+            <div class="cta-footer-body text-center">
+               <div class="cta-footer-icon">
+                  <div class=""><i class="fa fa-phone icon-telephone114"></i></div>
+              </div>
+              <h6>You Have Question ?</h6>
+              <p><a class="cta-call" href="tel:16230" data-s-object-id="tel:16230">16230</a></p>
+              Call us <br>
+              24 hours, 7 days a week<br><p></p>
+          </div>
+
+      </div>
+  </div>
+  <div class="col-md-4 col-sm-12 text-center cta-footer-col">
+     <div class="cta-footer-content">
+        <div class="cta-footer-body">
+           <div class="cta-footer-icon">
+              <div class=""><i class="fa fa-globe  icon-global"></i></div>
+          </div>
+
+          <h6>From overseas?</h6>
+          <p><a class="cta-call" href="tel:+88028332232" data-s-object-id="tel:+88028332232"> +88028332232 </a></p>
+          Call us <br>
+          24 hours, 7 days a week<br><p></p></div>
+
+
+      </div>
+  </div>
+  <div class="col-md-4 col-sm-12 text-center cta-footer-col" style="border-right:none;">
+    <div class="cta-footer-content">
+       <div class="cta-footer-body">
+          <div class="cta-footer-icon">
+             <div class=""><i class="fa fa-envelope-o"></i></div>
+         </div>
+         <h6>EMAIL US</h6>
+         <h6><a class="cta-call" href="mailto:info@ebl-bd.com">info@ebl-bd.com</a><h6>
+            <P>We will contact you as soon as possible.</P>
+
+        </div>
+
+    </div>
+</div>
+</div>
+</div>
+
+</div>
+			</section>
+
+
+</div>
+</section>
+
+
+
+<!-- end main-content -->
+</div>
+
+<!-- Footer -->
+<footer id="footer" class="footer" data-bg-img="images/footer-bg.png" data-bg-color="#005baa">
+ <script language="javascript">
+	var baseURL = "https://www.ebl.com.bd/";
+
+	function chat_window()
+	{
+		mywindow=open("https://chat.ebl-bd.com/webchatasp/", "displayWindow", "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes,resizable=yes, copyhistory=yes, width=800, height=600");
+	}
+</script>
+<div class="container pt-70 pb-40">
+<div class="row border-bottom">
+<div class="col-sm-6 col-md-3">
+<div class="widget dark">
+<a href="javascript:void(0)"><img alt="logo" src="https://www.ebl.com.bd/images/ebl_logo.gif" width="60"></a>
+<h3>Eastern Bank Ltd. </h3>
+<p>100 Gulshan Avenue,<br />
+Dhaka-1212<br />
+Bangladesh </p>
+<ul class="list-inline mt-5">
+<li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-white mr-5"></i> <a class="text-gray color-white" href="tel:+88 09666777325 ">88 09666777325  </a> </li>
+<li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-white mr-5"></i> <a class="text-gray color-white" href="mailto:info@ebl-bd.com">info@ebl-bd.com</a> </li>
+<li class="m-0 pl-10 pr-10"> <i class="fa fa-globe text-white mr-5"></i> <a class="text-gray color-white" href="#">www.ebl.com.bd</a> </li>
+</ul>
+</div>
+</div>
+<div class="col-sm-6 col-md-2">
+<div class="widget dark">
+<h4 class="widget-title">Useful Links</h4>
+<ul id="menuscrool" class="menuscrool list angle-double-right list-border">
+<li><a href="https://www.ebl.com.bd/sustainability">Sustainability</a></li>
+<li><a href="https://www.ebl.com.bd/HRS">Hajj Remittance Services</a></li>
+<li role="presentation" class="dropup">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+Financial Reports <span class="caret"></span>
+</a>
+<ul class="dropdown-menu footerdropdown-menu ">
+<li><a href="https://www.ebl.com.bd/report/financial#financial-reports">Financial Highlights</a></li>
+<li><a href="https://www.ebl.com.bd/report/financial#annual-reports">Annual Reports</a></li>
+<li><a href="https://www.ebl.com.bd/report/financial#annual-quarterly">Quarterly/Half-yearly Reports</a></li>
+<li><a href="https://www.ebl.com.bd/report/financial#credit-rating">Credit Rating</a></li>
+</ul>
+</li>
+<li><a href="https://www.ebl.com.bd/home/news/2021">News & Events</a></li>
+<li><a href="https://www.ebl.com.bd/charges#irate">Interest Rates </a></li>
+<li><a href="https://www.ebl.com.bd/charges#soc">Schedule of Charges </a></li>
+<li><a href="https://www.ebl.com.bd/forexrate">Foreign Exchange Rate</a></li>
+<li><a href="https://www.ebl.com.bd/emical"><span>Loan Calculator</span></a></li>
+</ul>
+</div>
+</div>
+<div class="col-sm-6 col-md-4">
+<div class="widget dark">
+<h4 class="widget-title">Information on</h4>
+<ul class="list angle-double-right list-border">
+<li><a href="https://www.ebl.com.bd/due-diligence-repository">Due Diligence Repository</a></li>
+<li><a href="https://www.ebl.com.bd/downloads/">Forms & Downloads </a></li>
+<li><a href="https://www.ebl.com.bd/price-sensitive-information">Price Sensitive Information</a></li>
+<li><a href="https://www.ebl.com.bd/nis">NIS</a></li>
+<li><a href="https://www.ebl.com.bd/regulatory/complaintcell">Complaint Cell</a></li>
+<li><a href="https://www.ebl.com.bd/report/financial#credit-rating">Disclosures on Risk Based Capital (Basel-III)</a></li>
+<li role="presentation" class="dropup">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+Regulatory info ( Bangladesh Bank ) <span class="caret"></span>
+</a>
+<ul class="dropdown-menu footerdropdown-menu ">
+<li><a href="https://www.ebl.com.bd/regulatory#illegalforex">Warning against illegal forex trading/dealing</a></li>
+<li><a href="https://www.ebl.com.bd/regulatory#BNSecurrity">Bank Note Security Features</a></li>
+<li><a href="https://www.ebl.com.bd/regulatory#Conduct">Code of Conduct</a></li>
+</ul>
+</li>                   
+</ul>
+</div>
+</div>
+<div class="col-sm-4 col-md-3">
+<div class="widget dark Achievements">
+<h4 class="widget-title line-bottom-theme-colored-2">Our  Achievements</h4>
+<div class="owl-carousel-1col Achievements" data-dots="true">
+ <div class="item">
+<div class="testimonial pt-10">
+<div class=" ">
+<a href="https://www.ebl.com.bd/./assets/aboutus/awards/the-bankers1.jpg" data-lightbox-gallery="gallery1" title="The Banker Award">
+<img class="img-thumbnail" alt="" src="https://www.ebl.com.bd/./assets/aboutus/awards/the-bankers1.jpg">
+</a>
+<p class="awardtittle">The Banker Award</p>
+</div>
+</div>
+</div>
+<div class="item">
+<div class="testimonial pt-10">
+<div class=" ">
+<a href="https://www.ebl.com.bd/./assets/aboutus/awards/Best-Employer-Brand-Award-2019.jpg" data-lightbox-gallery="gallery1" title="14TH EMPLOYER BRANDING AWARD BEST EMPLOYER BRAND AWARD 2019">
+<img class="img-thumbnail" alt="" src="https://www.ebl.com.bd/./assets/aboutus/awards/Best-Employer-Brand-Award-2019.jpg">
+</a>
+<p class="awardtittle">14TH EMPLOYER BRANDING AWARD BEST EMPLOYER BRAND AWARD 2019</p>
+</div>
+</div>
+</div>
+<div class="item">
+<div class="testimonial pt-10">
+<div class=" ">
+<a href="https://www.ebl.com.bd/./assets/aboutus/awards/CORPORATE-AWARD-2018.jpg" data-lightbox-gallery="gallery1" title="ICMAB BEST CORPORATE AWARD">
+<img class="img-thumbnail" alt="" src="https://www.ebl.com.bd/./assets/aboutus/awards/CORPORATE-AWARD-2018.jpg">
+</a>
+<p class="awardtittle">ICMAB BEST CORPORATE AWARD</p>
+</div>
+</div>
+</div>
+<div class="item">
+<div class="testimonial pt-10">
+<div class=" ">
+<a href="https://www.ebl.com.bd/./assets/aboutus/awards/int-finance-awards.jpg" data-lightbox-gallery="gallery1" title="INTERNATIONAL FINANCE AWARD ">
+<img class="img-thumbnail" alt="" src="https://www.ebl.com.bd/./assets/aboutus/awards/int-finance-awards.jpg">
+</a>
+<p class="awardtittle">INTERNATIONAL FINANCE AWARD </p>
+</div>
+</div>
+</div>
+
+
+</div>
+<ul class="styled-icons icon-bordered pt-10 ">
+<div class="font-16 color-white findus">Find us on</div>
+<li><a href="https://www.facebook.com/myebl/"  target="_blank"><i class="fa fa-facebook social"></i></a></li>
+<li><a href="https://www.instagram.com/eastern_bank_limited/"  target="_blank"><i class="fa fa-instagram social"></i></a></li>
+<li><a href="https://www.linkedin.com/company/myebl/" target="_blank"><i class="fa fa-linkedin social"></i></a></li>
+<li><a href="https://www.youtube.com/channel/UCwtlVqdtTf06xIpeEhRuz0w"  target="_blank"><i class="fa fa-youtube social"></i></a></li>
+<li><a href="http://bit.ly/eblviber"  target="_blank"><img src="https://www.ebl.com.bd/images/viber2.png"></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-bottom bg-ebl-yellow">
+
+<div class="container pt-10 pb-10">
+
+<div class="row">
+
+<div class="col-md-3">
+<p class="font-11  pt-15">Copyright &copy;2019 Eastern Bank Ltd. All Rights Reserved</p>
+</div>
+
+<div class="col-md-6 text-center">
+
+<div class="widget no-border m-0">
+
+<ul class="list-inline sm-text-center mt-5 font-11">
+
+<li class="font-11">
+
+<a href="https://www.ebl.com.bd/contact" >Contact Us</a>
+
+</li>
+
+<li>|</li>
+
+<li class="font-11">
+<a href="https://www.ebl.com.bd/sitemap">Site Map</a>
+</li>
+
+<!--<li>|</li>
+
+<li class="font-11">
+
+<a href="https://mail.ebl.com.bd/">Webmail</a>
+
+</li>-->
+
+</ul>
+
+</div>
+
+</div>
+<div class="col-md-3">
+
+<p class="font-10 pt-15 pull-right">Developed by <a target="_blank" href="http://datacraftbd.com/">Datacraft Ltd.</a></p>
+
+</div>
+</div>
+
+</div>
+
+</div>
+<div class="essbox">
+<div class="ess"><span><a href="https://selfservicehub.ebl-bd.com/">EBL Self Service</a></span></div>
+</div>
+
+<div id="social-sidebar" class="hidden-mobile">
+<ul>
+<li><a href="https://www.ebl.com.bd/onlineapply" class="transform "><span>APPLY  NOW</span></a></li>
+<li><a href="tel:16230" class="entypo-self"><i class="fa fa-phone" aria-hidden="true"></i><span><i>Call Us </i></span></a></li>
+<li><a href="javascript:void(0)" class="entypo-self"><i class="fa fa-map-marker fa-icon" aria-hidden="true"></i>
+<span class="sociallist">
+<h4 class="text-white text-left">Find us</h4>
+<label onClick="window.open('https://www.ebl.com.bd/branches', '_self')"> <img src="https://www.ebl.com.bd/images/branch-icon5.png"> &nbsp; Our Branches </label> <br>
+<label onClick="window.open('https://www.ebl.com.bd/locator/', '_self')"><img src="https://www.ebl.com.bd/images/locate-us.png"> &nbsp;Locate Us</label> 
+</span>
+			</a></li>
+<li><a href="javascript:void(0)"  class="entypo-self"><img src="https://www.ebl.com.bd/images/exchangerate.png"> 
+<span class="appslist exchangeratediv">
+<h4 class="exchangelegend">Currency Exchange Rate</h4>
+<table class="table table-bordered " align="center">
+<thead>
+<tr>
+<th width="34%">Currency</th>
+<th width="33%">T.T Clean Buying</th>
+<th width="33%">B.C Selling</th>
+</tr>
+</thead>
+<tbody>
+<tr >
+<td>USD</td>
+<td>83.95</td>
+<td>84.95</td>	
+</tr>
+
+<tr >
+<td>EUR</td>
+<td>99.48</td>
+<td>102.80</td>	
+</tr>
+
+<tr >
+<td>GBP</td>
+<td>116.05</td>
+<td>119.57</td>	
+</tr>
+
+<tr >
+<td colspan="3">All Card Related Payment: USD 1 = 85.4500</td>
+</tr>
+
+<tr >
+<td colspan="3">
+As on 15 March, 2021 </td>
+</tr>
+
+</tbody></table>
+<div onClick="window.open('https://www.ebl.com.bd/forexrate', '_self')"  class="forexmore">View More</div>
+</span>
+</a></li>
+<li><a href="https://www.ebl.com.bd/emical" class="entypo-self"><img src="https://www.ebl.com.bd/images/cal.png"> <span><i>Loan Calculator</i></span></a></li>
+
+<li class="help side-panel-trigger"><a href="#" class="entypo-self"><i class="fa fa-question-circle" aria-hidden="true"></i><span><i>Help </i></span></a></li>
+
+</ul>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6T6YSHM05Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6T6YSHM05Q');
+</script></footer>
+<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+</div>
+<!-- end wrapper -->
+
+<!-- Footer Scripts -->
+<!-- JS | Custom script for all pages -->
+
+<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  
+      (Load Extensions only on Local File Systems ! 
+      The following part can be removed on Server for On Demand Loading) -->
+      <script src="https://www.ebl.com.bd/js/custom.js"></script>
+      
+<script src="https://www.ebl.com.bd/js/emical/js/simple-slider.js"></script>
+<script src="https://www.ebl.com.bd/js/emical/js/Chart.js"></script>
+<script src="https://www.ebl.com.bd/js/emical/js/emi_script.js"></script> 
+<script>
+function numberWithCommas(x) {
+return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+function numberWithoutCommas(x) {
+return  x.toString().replace(/\s*,\s*|\s+,/g, '');   
+}
+</script>
+<script type="text/javascript">
+function alphabetsOnly(e) {
+var key;			
+if(window.event || !e.which) // IE
+{
+key = e.keyCode; // for IE, same as window.event.keyCode
+}
+else if(e) // netscape
+{
+key = e.which;
+
+}	
+key=parseInt(key)	
+
+if(window.event || !e.which) // IE
+{
+if( !(key>=48 && key<=57) && !(key==8) && !(key==46))
+{
+e.keyCode=0; // for IE, same as window.event.keyCode
+}
+}
+else if(e) // netscape
+{
+if (!(key>=48 && key<=57) && !(key==8) && !(key==46))
+{	
+//alert(e.which)
+//e.which=null;
+return false;
+}
+}
+}
+</script>
+
+<script type="text/javascript">
+function enableDisableDDL()
+{
+if(document.getElementById("radio_nriNo").checked == true)
+{
+document.getElementById("ddl_profession").disabled = true;
+document.getElementById("radio_salary").disabled = false;
+document.getElementById("radio_noSalary").disabled = false;
+}
+if(document.getElementById("radio_nriYes").checked == true)
+{
+document.getElementById("ddl_profession").disabled = false;
+document.getElementById("radio_salary").disabled = true;
+document.getElementById("radio_noSalary").disabled = true;
+}
+}
+</script>
+
+<script type="text/javascript">
+function getEMI()
+{
+/*
+r = r/month/100;
+
+var E1 = p*r*(1+r)^n;
+
+var E2 = (1+r)^n -1;
+
+var E = E1/E2;*/
+
+var loanamt = document.getElementById("txt_loan_amt").value;
+var repaytrm = document.getElementById("txt_repaytrm").value;
+var intrest = document.getElementById("txt_interest").value;
+
+var rate1 = intrest/repaytrm/100;
+
+rate = 1+rate1;
+var interestRate = Math.pow(rate,repaytrm);
+
+var E1 = loanamt*rate1*interestRate;
+
+var E2 = interestRate-1;
+
+var EMI = Math.round(E1/E2);
+
+document.getElementById("show").innerHTML = EMI;
+}
+</script>
+ <script type="text/javascript">
+                            function amortizationChart(){
+                            
+                            var term =    parseFloat($("#slider2").val()); 
+                            var roi  =    parseFloat($("#slider3").val());
+                            roi = roi.toFixed(2);
+                            allValues= getEmi();
+                            osLoan   =  allValues[0];
+                            emi      =   allValues[1];
+                            body     =   "<h2 style='font-family:arial; font-size:16px; letter-spacing: 1px;'><i class='fa fa-list-alt'></i> Amortization Chart </h2>"  
+                            +"<table id='amortization-table' class=table table-hover'  border='1' cellspacing='1' cellpadding='3' bgcolor='#FFFFFF' style='font-family:arial; font-size:13px;'>"
+                            +"<thead>"
+                            +"<tr  bgcolor='#03c9ab' style='color:#FFFFFF;'>"
+                            +"<th>Year</th>"
+                            //   +"<th width='8%'>Term</th>"
+                            +"<th >OS Loan</th>"
+                            +"<th >Principal</th>"
+                            +"<th >Interest</th>"
+                            +"<th>EMI</th>"
+                            +"</tr>"
+                            +"</thead><tbody>";
+                            
+                            osLoan = parseFloat(osLoan);
+                            osLoan = Math.round(osLoan);
+                            osLoan = osLoan.toFixed(2);
+                            roi = parseFloat(roi);
+                            roi = roi.toFixed(2);
+                            emi = Math.round(emi);
+                            emi = emi.toFixed(2);
+                            var d = new Date();
+                            current_year = d.getFullYear();
+                            year =  current_year;
+                            newYear =  d.getFullYear();
+                            month = d.getMonth();
+                            var monthArr = new Array();
+                            monthArr[0] = "Jan";
+                            monthArr[1] = "Feb";
+                            monthArr[2] = "Mar";
+                            monthArr[3] = "Apr";
+                            monthArr[4] = "May";
+                            monthArr[5] = "Jun";
+                            monthArr[6] = "Jul";
+                            monthArr[7] = "Aug";
+                            monthArr[8] = "Sep";
+                            monthArr[9] = "Oct";
+                            monthArr[10] = "Nov";
+                            monthArr[11] = "Dec";
+                            
+                            // chartArray = new Array(120);
+                            //chartArray[0] = [];
+                            // chartArray[1] = [];
+                            
+                            
+                            temp_month=month;
+                            temp_osLoan = osLoan;
+                            temp_emi = emi;
+                            totalOsLoan = osLoan;
+                            totalInterest = parseFloat(0);
+                            totalPrincipal = parseFloat(0);
+                            totalEmi = parseFloat(0);
+                            //alert(totalInterest);
+                            zid = parseInt(0);
+                            for( i=term; i>0; i--){
+                            temp_i=i;
+                            totalInterest = parseFloat(0);
+                            totalPrincipal = parseFloat(0);
+                            totalEmi = parseFloat(0);
+                            //alert(month);
+                            if(month >11){
+                            //zid ++;
+                            month = 0;
+                            newYear ++;
+                            // chartArray[zid] = totalOsLoan;
+                            // chartArray[zid] = totalInterest;
+                            //alert(chartArray[zid,1]);
+                            //alert(chartArray[zid,0]);
+                            // chartArray[zid] = totalPrincipal;
+                            // chartArray[zid] = totalEmi;
+                            totalOsLoan = closingOS;
+                            // totalInterest = 0;
+                            // totalPrincipal = 0;
+                            // totalEmi = 0;
+                            //zid ++;
+                            }
+                            m =  monthArr[month];
+                            
+                            if(month==0)
+                            { temp_month = month; } 
+                            // if(month<=11){
+                            while(temp_month<12 && temp_i>0){
+                            // temp_m =  monthArr[temp_month];
+                            
+                            temp_int       = parseFloat((temp_osLoan * (roi/100))/12);
+                            temp_int = temp_int.toFixed(2);
+                            temp_prin      = parseFloat(temp_emi - temp_int);
+                            temp_prin = temp_prin.toFixed(2);
+                            temp_closingOS = parseFloat(temp_osLoan - temp_prin);
+                            temp_closingOS = temp_closingOS.toFixed(2);
+                            
+                            totalInterest = parseFloat(totalInterest) + parseFloat(temp_int);
+                            totalInterest = totalInterest.toFixed(2);
+                            totalPrincipal = parseFloat(totalPrincipal) +  parseFloat(temp_prin);
+                            totalPrincipal = totalPrincipal.toFixed(2);
+                            totalEmi = parseFloat(totalEmi) + parseFloat(temp_emi);
+                            totalEmi = totalEmi.toFixed(2);
+                            temp_osLoan = temp_closingOS;
+                            temp_month++;
+                            temp_i--;
+                            }
+                            temp_month = 12;
+                            
+                            // alert(temp_osLoan);
+                            // }
+                            //alert(temp_osLoan);
+                            
+                            int       = parseFloat((osLoan * (roi/100))/12);
+                            int = int.toFixed(2);
+                            prin      = parseFloat(emi - int);
+                            prin = prin.toFixed(2);
+                            closingOS = parseFloat(osLoan - prin);
+                            closingOS = closingOS.toFixed(2);
+                            
+                            // totalInterest = parseFloat(totalInterest) + parseFloat(int);
+                            //  totalPrincipal = parseFloat(totalPrincipal) +  parseFloat(prin);
+                            // totalEmi = parseFloat(totalEmi) + parseFloat(emi);
+                            
+                            if( i==1 ) {
+                            closingOS = 0;
+                            //emi = osLoan;
+                            }
+                            
+                            /*
+                            * td.paymentyear {
+                            text-align: center !important;
+                            font-weight: bold !important;
+                            width: 70px !important;
+                            }
+                            table td {
+                            border: 1px solid #DBDAD7;
+                            text-align: center;
+                            }
+                            */
+                            // 8ab936 B4282E  
+                            body     +=     "";
+                            if(i == term){ 
+                            body     +=     "<tr style='background-color:#FFFFFF;'><td id=year"+newYear+" class='paymentyear toggle-open' onclick=toggleTable(this)>&nbsp;"+ newYear +"</td><td>"+ totalOsLoan +"</td><td>"+ totalPrincipal +"</td><td>"+ totalInterest +"</td><td>"+ totalEmi +"</td></tr>";
+                            body     +=     "<tr><td colspan=8><div id=year"+newYear+" style=display:block><table class='table table-hover' bgcolor='#CCCCCC' border='1' width='100%' cellspacing='1' cellpadding='8'><tbody>"; 
+                            }        
+                            if(newYear != year){
+                            body     +=     "</tbody></table></div></td></tr>"; 
+                            body     +=     "<tr   style='background-color:#FFFFFF' ><td id=year"+newYear+" class='paymentyear toggle toggle-open' onclick=toggleTable(this)>&nbsp;"+ newYear +"</td><td>"+ totalOsLoan +"</td><td>"+ totalPrincipal +"</td><td>"+ totalInterest +"</td><td>"+ totalEmi +"</td></tr>";
+                            body     +=     "<tr><td colspan=8><div id=year"+newYear+" style=display:block><table class='table table-hover' bgcolor='#CCCCCC' border='1' width='100%' cellspacing='1' cellpadding='8'><tbody>"; 
+                            year = newYear;
+                            }
+                            
+                            body     +=     "<tr bgcolor='#96c93b'>" 
+                            +"<td align='center'>"+         m +"</td>"
+                            // +"<td width='8%'>"+         i +"</td>"
+                            +"<td>"+    osLoan +"</td>"
+                            +"<td >"+      prin +"</td>"
+                            +"<td >"+       int +"</td>"
+                            // +"<td width='9%'>"+       roi +"</td>"
+                            // +"<td width='15%'>"+ closingOS +"</td>"
+                            +"<td>"+       emi +"</td>"
+                            +"</tr>";
+                            osLoan    = closingOS;
+                            temp_osLoan = osLoan;
+                            month++;
+                            //temp_month=month;
+                            
+                            }
+                            body     += "</tbody></table>";
+                            $("#amortization-chart-body").html(body);
+                            for( i=newYear; i>current_year; i--){
+                            $('div#year'+i).hide();
+                            }
+                            
+                            }
+                            </script>
+                            <script type="text/javascript">
+                            function getEmi(){
+                            /**
+                            * Values from EMI calci
+                            * @type @exp;document@call;getElementById@pro;value
+                            */
+                            var loanamt=document.getElementById('v1').value;
+                            loanamt=numberWithoutCommas(loanamt);
+                            var repaytrm=document.getElementById('v2').value;
+                            var intrest=document.getElementById('v3').value;
+                            
+                            /**
+                            * EMI Logic
+                            */
+                            parseInt(loanamt);
+                            var rate1 = (parseFloat(intrest)/100)/12;
+                            
+                            rate = 1+rate1;
+                            var interestRate = Math.pow(rate,repaytrm);
+                            var E1 = loanamt*rate1*interestRate;
+                            var E2 = interestRate-1;
+                            var EMI = (E1/E2);
+                            EMI = EMI.toFixed(2);
+                            
+                            var total_payable=EMI*repaytrm;
+                            var total_interest=(total_payable-loanamt);
+                            var emi_perc=(total_interest/total_payable)*100;
+                            emi_perc.toFixed(2);
+                            
+                            /**
+                            *  Values to disply
+                            * @type Array
+                            */    
+                            var a=loanamt;
+                            var b=EMI;
+                            var c=total_payable;
+                            
+                            // var a=loanamt; 
+                            // var b=EMI.toFixed(2); 
+                            // var c=total_payable.toFixed(2); 
+                            
+                            allValues1 = [a,b,c];
+                            
+                            return allValues1;
+                            }
+                            function toggleTable(element){
+                            ele = element.id;
+                            
+                            //$('div#'+ele+'').toggle();
+                            //addClass toggle-open if visible
+                            if($('div#'+ele+'').is(':visible')) {
+                            $('div#'+ele+'').toggle('slow');
+                            //$('div#'+ele+'').css('display','none');
+                            $('#'+ele+'').removeClass('toggle-open');
+                            $('#'+ele+'').addClass('toggle');
+                            }
+                            else{
+                            //$('div#'+ele+'').css('display','block');
+                            $('div#'+ele+'').toggle('slow');
+                            $('#'+ele+'').removeClass('toggle');
+                            $('#'+ele+'').addClass('toggle-open');
+                            }
+                            
+                            
+                            }
+                            </script>
+                            <script type="text/javascript">
+                            function validate(input){
+                            if(input.value=='' || isNaN(input.value)){
+                            // alert('er');
+                            input.focus();
+                            }
+                            }
+                            function numeralsOnly(evt) 
+                            {
+                            evt = (evt) ? evt : event;
+                            var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode : 
+                            ((evt.which) ? evt.which : 0));
+                            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                            //alert("Enter only Numbers in this field.");
+                            return false;
+                            }
+                            return true;
+                            }
+                            function numeralsAndDecimalOnly(evt) 
+                            {
+                            evt = (evt) ? evt : event;
+                            var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode : 
+                            ((evt.which) ? evt.which : 0));
+                            if (charCode > 31 && (charCode < 48 || charCode > 57)&& charCode != 46) {
+                            //alert("Enter only Numbers in this field.");
+                            return false;
+                            }
+                            return true;
+                            }
+                            function v1inputChange(){
+                            var vv=$("#v1").val();
+                            vv=numberWithoutCommas(vv);
+                            $("#slider1").simpleSlider("setValue",vv);
+                            }
+                            function v2inputChange(){
+                            var vv=$("#v2").val();
+                            $("#slider2").simpleSlider("setValue",vv);
+                            }
+                            function v3inputChange(){
+                            var vv=$("#v3").val();
+                            $("#slider3").simpleSlider("setValue",vv);
+                            }
+                            $("#slider1").
+                            bind("slider:ready slider:changed", function (event, data) {
+                            var v=    $("#slider1").val();
+                            v=numberWithCommas(v);
+                            $("#v1").val(v);
+                            myfun();
+                            });
+                            $("#slider2").
+                            bind("slider:ready slider:changed", function (event, data) {
+                            var v=    $("#slider2").val();
+                            $("#v2").val(v);
+                            
+                            myfun();
+                            });
+                            $("#slider3").
+                            bind("slider:ready slider:changed", function (event, data) {
+                            var v=    parseFloat($("#slider3").val());
+                            v.toFixed(2);
+                            $("#v3").val(v);
+                            myfun();
+                            });
+                            $("[data-slider]")
+                            .each(function () {
+                            var input = $(this);
+                            
+                            })
+                            .bind("slider:ready slider:changed", function (event, data) {
+                            
+                            });
+                            
+                            </script>
+                            <script type="text/javascript">
+                            var pieData = [
+                            {
+                            value: 30,
+                            color:"#8ab936;"
+                            },
+                            {
+                            value : 100-30,
+                            color : "#03c9ab"//blue
+                            }
+                            
+                            ];
+                            
+                            var myPie = new Chart(document.getElementById("canvas").getContext("2d")).Pie(pieData);
+                            
+                            function myfun(){
+                            
+                            /**
+                            * Values from EMI calci
+                            * @type @exp;document@call;getElementById@pro;value
+                            */
+                            var loanamt=document.getElementById('v1').value;
+                            loanamt=numberWithoutCommas(loanamt);
+                            var repaytrm=document.getElementById('v2').value;
+                            var intrest=document.getElementById('v3').value;
+                            
+                            /**
+                            * EMI Logic
+                            */
+                            parseInt(loanamt);
+                            var rate1 = (parseFloat(intrest)/100)/12;
+                            
+                            rate = 1+rate1;
+                            //Math.round(rate);
+                            var interestRate = Math.pow(rate,repaytrm);
+                            //Math.round(interestRate);
+                            var E1 = loanamt*rate1*interestRate;
+                            //Math.round(E1);
+                            var E2 = interestRate-1;
+                            //Math.round(E2);
+                            var EMI = (E1/E2);
+                            EMI.toFixed(2);
+                            
+                            var total_payable=EMI*repaytrm;
+                            var total_interest=(total_payable-loanamt);
+                            var emi_perc=(total_interest/total_payable)*100;
+                            emi_perc.toFixed(2);
+                            
+                            /**
+                            *  Values to disply
+                            * @type Array
+                            */    
+                            var a=Math.round(EMI);
+                            var b=Math.round(total_interest);
+                            var c=Math.round(total_payable);
+                            
+                            a.toString();
+                            b.toString();
+                            c.toString();
+                            a=numberWithCommas(a);
+                            b=numberWithCommas(b);
+                            c=numberWithCommas(c);
+                            /*document.getElementById('emi').innerHTML='&#8377'+' <b>'+a+'</b>';
+                            document.getElementById('tip').innerHTML='&#8377'+'<b> '+b+'</b>';
+                            document.getElementById('tp').innerHTML='&#8377'+' <b>'+c+'</b>';*/
+							   document.getElementById('emi').innerHTML='<div class="row">';
+							   
+                            document.getElementById('emi').innerHTML='<div class="col-md-4"><img style="" width="40px" height="40px" src="https://www.ebl.com.bd/js/emical/images/currency_sign_rupee_grey.png" /></div>'+' <div class="col-md-6" style="margin-top:1px;font-size:190%;line-height:36px;"><b>'+a+'</b></div>';
+							
+                            document.getElementById('tip').innerHTML='<div class="col-md-4" ><img style="" width="35px" height="35px" src="https://www.ebl.com.bd/js/emical/images/currency_sign_rupee_grey.png" /></div>'+' <div  class="col-md-6" style="margin-top:1px;font-size:140%;line-height:32px;"><b> '+b+'</b> </div>';
+                            document.getElementById('tp').innerHTML='<div class="col-md-4" ><img style="" width="35px" height="35px" src="https://www.ebl.com.bd/js/emical/images/currency_sign_rupee_grey.png" /></div>'+' <div class="col-md-6"  style="margin-top:1px;font-size:140%;line-height:32px;"><b>'+c+'</b> </div>';
+                            
+                            
+                            var pieData = [
+                            {
+                            
+                            value: emi_perc,
+                            color:"#8ab936" //yellow
+                            },
+                            {
+                            value : 100-emi_perc,
+                            color : "#03c9ab"
+                            }
+                            ];
+                            var myPie = new Chart(document.getElementById("canvas").getContext("2d")).Pie(pieData);
+                            amortizationChart();
+                            }
+                            </script>
+
+
+
+
+
+       
+</body>
+</html>

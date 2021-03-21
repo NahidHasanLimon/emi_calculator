@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EMI Caculator</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<style type="text/css">
+		div.error {
+    text-color:red;
+    background-color: red;
+}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="emi-div mst-5">
+			<div class="card">
+				<div class="card-header text-center">
+					<h1>EMI Calculator</h1>
+				</div>
+				<div class="card-body">
+					<div class="emi-form-div text-center">
+						<form name="emi_calculation_form" id="emi_calculation_form" onsubmit="event.preventDefault();">
+						 <div class="form-group row">
+						    <label for="loan_value" class="col-sm-4 col-form-label">Loan Value</label>
+						    <div class="col-sm-8">
+						      <input name="loan_value" type="number" class="form-control" id="loan_value" placeholder="Give Your Loan Value">
+						    </div>
+						  </div>
+						   <div class="form-group row">
+						    <label for="loan_value" class="col-sm-4 col-form-label">Interest Rate (4 to 14 %)</label>
+						    <div class="col-sm-8">
+						      <input name="interest_rate" type="number" class="form-control" id="interest_rate" placeholder="Put Your Interest Rate">
+						    </div>
+						  </div> 
+						   <div class="form-group row">
+						    <label for="loan_value" class="col-sm-4 col-form-label">Pay Back Duration(Months)</label>
+						    <div class="col-sm-8">
+						    	<input type="range" class="form-control" name="pay_back_duration" min="1" id="pay_back_duration" onchange="updateDisplaySliderValue(this.value)">
+						     <!--  <select class="form-control" name="pay_back_duration" id="pay_back_duration">
+						      	<option value="3"> 3 Years</option>
+						      	<option value="5"> 5 Years</option>
+						      	<option value="7"> 7 Years</option>
+						      	<option value="10"> 10 Years</option>
+						      </select> -->
+						    </div>
+						  </div>
+						  <label id="slider_value_display">l</label>
+						<div class="">
+							  <input class="btn btn-md btn-outline-success float-right m-2" type="submit" name="calculate_emi" value="Caculate" onclick="calculate_emi_method()">
+						</div>
+						 <!--  <hr> -->
+						  <div class="form-group row">
+						  	<label for="emi_calculation_result" class="col-sm-4 col-form-label" >EMI</label>
+						  	<div class="col-sm-8">
+						  		<label>0.00</label>
+						  	</div>
+						  </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function updateDisplaySliderValue(value){
+			$('#slider_value_display').text(value);
+		}
+		  function calculate_emi_method(){
+		   if($("#emi_calculation_form").valid())
+           {
+           	  var loanamt=document.getElementById('loan_value').value;
+              var repaytrm=document.getElementById('pay_back_duration').value;
+              var intrest=document.getElementById('interest_rate').value;
+                 /**
+                  * EMI Logic
+                  */
+                 parseInt(loanamt);
+                 var rate1 = (parseFloat(intrest)/100)/12;
+                 rate = 1+rate1;
+                 //Math.round(rate);
+		var interestRate = Math.pow(rate,repaytrm);
+		//Math.round(interestRate);
+		var E1 = loanamt*rate1*interestRate;
+		//Math.round(E1);
+		var E2 = interestRate-1;
+		//Math.round(E2);
+		var EMI = (E1/E2);
+                EMI.toFixed(2);
+                var total_payable=EMI*repaytrm;
+                var total_interest=(total_payable-loanamt);
+                var emi_perc=(total_interest/total_payable)*100;
+                emi_perc.toFixed(2);
+                var a=Math.round(EMI);
+                var b=Math.round(total_interest);
+                var c=Math.round(total_payable);
+				console.log(a);
+				console.log(b);
+				console.log(c);
+					// console.log(loan_value);
+				// console.log(interest_rate);
+				// console.log(pay_back_duration);
+				// console.log(result);
+				// console.log(emi);
+           }else{
+           	console.log("in valid");
+           }		
+		}
+		$(document).ready(function() {
+		    $("#emi_calculation_form").validate({
+		        rules: {
+		        	 'loan_value':{
+	                required: true,
+	                number: true,
+	                min: 0,
+	            },
+			        'interest_rate':{
+	                required: true,
+	                number: true,
+	                min: 4,
+	                max: 14,
+	            },
+		            pay_back_duration: "required",
+		        },
+		        messages: {
+		            'loan_value':{ 
+		            	required: 'Loan value is required',
+		            	number: 'Numbers only in loan value',
+		            	 min: 'Loan value is Minimum 1.',
+		            },
+		               'interest_rate':{
+		                required: 'Interest rate is required.',
+		                number: 'Numbers only in interest rate.',
+		                min: 'Interest rate is Minimum 4.',
+		                max: 'Interest rate is Maximum 14.'
+		            },
+		            pay_back_duration: "select a pay back duration",
+
+		        }
+		    })
+
+	});
+		
+	</script>
+</body>
+</html>
